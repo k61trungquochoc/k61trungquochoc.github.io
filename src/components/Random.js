@@ -10,7 +10,7 @@ export default class extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps?.selected?.id !== this.props?.selected?.id) {
-            this.setState({ done: false })
+            this.setState({ done: false, number: 0 })
         }
     }
 
