@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   onChoose = (selected) => {
-    this.setState({ selected })
+    this.setState({ selected, show: true })
   }
 
   setNumber = (id, number) => {
@@ -27,20 +27,26 @@ class App extends Component {
     })
   }
 
+  openList = () => {
+    this.setState({ show: false })
+  }
+
   render() {
-    const { data, selected } = this.state;
+    const { data, selected, show } = this.state;
+    console.log(show);
+    
     return (
       <div className="App">
-        <nav class="navbar navbar-light bg-light">
-          <span class="navbar-brand mb-0 h1"><img src={logo} className="App-logo" alt="logo" />K61 Trung Quốc học</span>
+        <nav className="navbar navbar-light bg-light">
+          <span className="navbar-brand mb-0 h1"><img src={logo} className="App-logo" alt="logo" />K61 Trung Quốc học</span>
         </nav>
         <div className="content pt-3 pb-3">
           <div className="row" style={{ height: '100%' }}>
-            <div className="col-4" style={{ height: '100%' }}>
+            <div className="col-12 col-sm-4" style={{ height: '100%' }}>
               <List data={data} onChoose={this.onChoose} />
             </div>
-            <div className="col-8" style={{ height: '100%' }}>
-              <Random selected={selected} setNumber={this.setNumber} />
+            <div className={`col-12 col-sm-8 mobile ${!show ? 'show' : ''}`} style={{ height: '100%' }}>
+              <Random selected={selected} setNumber={this.setNumber} openList={this.openList} />
             </div>
           </div>
         </div>

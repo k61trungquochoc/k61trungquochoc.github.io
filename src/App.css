@@ -66,3 +66,44 @@ html, body {
 .number {
   font-size: 10rem;
 }
+
+.show-on-moblie {
+  display: none;
+}
+
+@media only screen and (max-width: 577px) {
+  .hidden {
+    display: none;
+  }
+  
+  .content {
+    display: block;
+    position: relative;
+  }
+
+  .mobile {
+    position: absolute;
+    top: 0;
+    background-color: white;
+  }
+
+  .hidden-on-moblie {
+    display: none;
+  }
+
+  .show-on-moblie {
+    display: block;
+  }
+
+  .show {
+    display: none!important;
+  }
+
+  .position-b-50 {
+    position: absolute;
+    bottom: 50px;
+    left: 0px;
+    padding: 0px 20px;
+    width: 100%;
+  }
+}
