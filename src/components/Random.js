@@ -41,10 +41,10 @@ export default class extends Component {
         return (
             <div className='h-100' >
                 <div className="alert alert-primary hidden-on-moblie" role="alert">
-                    Chọn sinh viên bên bảng bên trái để bắt đầu
+                    Chọn sinh viên ở bảng bên trái để bắt đầu
                 </div>
                 <div className='d-flex flex-column align-items-center justify-content-between' style={{ paddingTop: 100 }}>
-                    <h1>{selected?.name}</h1>
+                    <h1 className="text-center">{selected?.name}</h1>
                     <h1 className='number pb-5'>{number}</h1>
                     {(!done || !selected?.id) && (isRandoming ?
                         <button type="button" className="btn btn-danger" onClick={this.stopRandom}>STOP</button>
